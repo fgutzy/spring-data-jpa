@@ -30,8 +30,7 @@ public class Person {
         this.name = name;
     }
 
-    public void testinger (){
-
+    public void test3 (){
     }
 
 }
