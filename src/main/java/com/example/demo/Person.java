@@ -30,7 +30,4 @@ public class Person {
         this.name = name;
     }
 
-    public int abc(){
-        return 2;
-    }
 }
