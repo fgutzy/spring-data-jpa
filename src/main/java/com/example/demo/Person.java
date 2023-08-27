@@ -29,4 +29,8 @@ public class Person {
     public Person(String name) {
         this.name = name;
     }
+
+    public int abc(){
+        return 2;
+    }
 }
