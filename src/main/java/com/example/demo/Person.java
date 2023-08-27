@@ -30,7 +30,8 @@ public class Person {
         this.name = name;
     }
 
-    public void test4 (){
+    public void test5 (){
+        System.out.println("haha");
     }
 
 }
