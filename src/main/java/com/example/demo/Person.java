@@ -31,6 +31,7 @@ public class Person {
     }
 
     public void test5 (){
+        System.out.println("haha");
     }
 
 }
