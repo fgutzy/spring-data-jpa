@@ -14,7 +14,7 @@ class PersonTest {
     @Test
     public void savePerson(){
         personRepository.deleteAll();
-        Person p = new Person("Thomas", 12);
+        Person p = new Person("Thomas");
         personRepository.save(p);
         assertEquals("Thomas", personRepository.findByAgeGreaterThan(10).getName());
     }
