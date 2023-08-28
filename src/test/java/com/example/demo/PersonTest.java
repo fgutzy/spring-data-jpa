@@ -5,19 +5,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 @SpringBootTest
 class PersonTest {
-
 
     @Autowired
     PersonRepository personRepository;
 
     @Test
-    public void abc(){
+    public void savePerson(){
         personRepository.deleteAll();
-        Person o = new Person("Michael");
-        personRepository.save(o);
-        assertEquals(o, personRepository.findByNameContaining("icha"));
+        Person p = new Person("Thomas", 12);
+        personRepository.save(p);
+        assertEquals("Thomas", personRepository.findByAgeGreaterThan(10).getName());
     }
+
 }

@@ -26,12 +26,9 @@ public class Person {
 
     int age;
 
-    public Person(String name) {
+    public Person(String name, int age) {
         this.name = name;
-    }
-
-    public void test6 (){
-        System.out.println("haha");
+        this.age = age;
     }
 
 }
