@@ -9,6 +9,4 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 
     Person findByAgeGreaterThan(int age);
 
-
-
 }
