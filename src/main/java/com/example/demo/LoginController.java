@@ -13,7 +13,9 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String processLogin(@ModelAttribute Person person, Model model) {
+    public String processLogin(@ModelAttribute("person") Person person, Model model) {
+        System.out.println(person.name + " naminger");
+        System.out.println(person.password + " passwortinger");
         if (isValidUser(person)) {
             model.addAttribute("message", "Login successful!");
         } else {
