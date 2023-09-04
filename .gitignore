@@ -3,7 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-pom.xml
+
 
 ### STS ###
 .apt_generated
@@ -19,7 +19,6 @@ pom.xml
 *.iws
 *.iml
 *.ipr
-pom.xml
 
 ### NetBeans ###
 /nbproject/private/
