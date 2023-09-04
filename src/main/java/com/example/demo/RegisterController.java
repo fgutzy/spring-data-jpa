@@ -32,7 +32,7 @@ public class RegisterController {
                 model.addAttribute("message", "passwords dont match");
             }
         } else{
-            model.addAttribute("message", "username taken");
+            model.addAttribute("message", "username is taken");
 
         }
         return "register";
