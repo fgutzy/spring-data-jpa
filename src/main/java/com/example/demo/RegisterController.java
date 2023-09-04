@@ -6,6 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 @Controller
 public class RegisterController {
 
@@ -19,8 +21,21 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public String createNewPerson(@ModelAttribute("newPerson") Person newPerson){
-        personRepository.save(newPerson);
+    public String createNewPerson(@ModelAttribute("newPerson") Person newPerson, @RequestParam(value = "repeatPassword") String password2,
+    Model model){
+        if(isValidUser(newPerson)){
+            if (newPerson.getPassword().equals(password2)){
+                model.addAttribute("message", "registered succesfully");
+                personRepository.save(newPerson);
+                return "testPage";
+            } else{
+                model.addAttribute("message", "passwords dont match");
+            }
+        }
         return "register";
+    }
+
+    boolean isValidUser(Person person){
+        return !personRepository.existsByName(person.getName());
     }
 }

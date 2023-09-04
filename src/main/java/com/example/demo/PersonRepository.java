@@ -6,4 +6,7 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
 
     Person findByAgeGreaterThan(int age);
 
+    boolean existsByNameAndPassword(String name, String password);
+
+    boolean existsByName(String name);
 }

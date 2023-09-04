@@ -1,11 +1,17 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class LoginController {
+
+    @Autowired
+    PersonRepository personRepository;
+
+
     @GetMapping("/login")
     public String showLoginForm(Model model) {
         model.addAttribute("person", new Person());
@@ -16,6 +22,7 @@ public class LoginController {
     public String processLogin(@ModelAttribute("person") Person person, Model model) {
         if (isValidUser(person)) {
             model.addAttribute("message", "Login successful!");
+            return "testPage";
         } else {
             model.addAttribute("message", "Login failed. Please try again.");
         }
@@ -23,7 +30,7 @@ public class LoginController {
     }
 
     private boolean isValidUser(Person person) {
-        return person.getName().equals("test") && person.getPassword().equals("test");
+        return personRepository.existsByNameAndPassword(person.getName(), person.getPassword());
     }
 }
 
