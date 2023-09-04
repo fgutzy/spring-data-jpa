@@ -19,7 +19,7 @@ pom.xml
 *.iws
 *.iml
 *.ipr
-pom.xml
+
 
 ### NetBeans ###
 /nbproject/private/
