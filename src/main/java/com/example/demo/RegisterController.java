@@ -31,6 +31,9 @@ public class RegisterController {
             } else{
                 model.addAttribute("message", "passwords dont match");
             }
+        } else{
+            model.addAttribute("message", "username taken");
+
         }
         return "register";
     }
