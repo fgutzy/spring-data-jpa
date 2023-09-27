@@ -21,7 +21,7 @@ public class LoginController {
     @PostMapping("/login")
     public String processLogin(@ModelAttribute("person") Person person, Model model) {
         if (isValidUser(person)) {
-            model.addAttribute("message", "Login successful!");
+            model.addAttribute("message", "Login was successful!");
             return "testPage";
         } else {
             model.addAttribute("message", "Login failed. Please try again.");
