@@ -20,6 +20,7 @@ public class LoginController {
 
     @PostMapping("/login")
     public String processLogin(@ModelAttribute("person") Person person, Model model) {
+        //secret message
         if (isValidUser(person)) {
             model.addAttribute("message", "Login was successful!");
             return "testPage";
